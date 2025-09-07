@@ -49,6 +49,8 @@
 import React, { useState } from "react";
 import logo from "./assets/logo.png"; // put file in src/assets/logo.png
 
+const LOCAL_API_URL = "http://localhost:8000";
+const PROD_API_URL = "https://testprojectbackend.onrender.com"; // replace with your production backend URL
 function Login({ setToken }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -60,7 +62,7 @@ function Login({ setToken }) {
     formData.append("password", password);
 
     try {
-      const res = await fetch("http://localhost:8000/login", {
+      const res = await fetch(`${PROD_API_URL}/login`, {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: formData.toString(),
