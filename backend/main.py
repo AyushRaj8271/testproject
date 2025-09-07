@@ -12,7 +12,8 @@ ACCESS_TOKEN_EXPIRE_MINUTES = 30
 # Allow CORS (so React frontend can call backend)
 origins = [
     "http://localhost:3000",
-    "http://127.0.0.1:3000"
+    "http://127.0.0.1:3000",
+    "https://testproject-chi-rust.vercel.app",  # your Vercel frontend
 ]
 app.add_middleware(
     CORSMiddleware,
